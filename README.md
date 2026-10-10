@@ -11,15 +11,17 @@ ni iniciar GEMARIS.
 
 ## Publicación
 
-El repositorio público dedicado ya existe. Para publicarlo, copia únicamente
-los archivos de esta carpeta, incluido `images/gemaris-isotipo.png`. No
-publiques el repositorio privado completo ni agregues configuración, datos,
-capturas operacionales o código de la aplicación.
+El repositorio público dedicado ya contiene únicamente los archivos de esta
+carpeta, incluido `images/gemaris-isotipo.png`. No publiques el repositorio
+privado completo ni agregues configuración, datos, capturas operacionales o
+código de la aplicación.
 
-En GitHub, habilita **Settings → Pages** y selecciona la rama `main` y la
-carpeta raíz. Antes de publicar, revisa el texto, la marca y cualquier
-información de contacto que se decida incorporar. El sitio actual indica que el
-proyecto está en desarrollo y no anuncia disponibilidad comercial.
+Para servir el sitio, habilita **Settings → Pages**, selecciona **Deploy from a
+branch**, la rama `main` y la carpeta raíz (`/(root)`). Hasta completar ese
+paso, los archivos son públicos en el repositorio, pero GitHub Pages puede no
+estar activo. Después, verifica la URL asignada y que cargue el isotipo. El
+contenido actual indica que el proyecto está en desarrollo y no anuncia
+disponibilidad comercial.
 
 El sitio no requiere bibliotecas externas ni tiene conexión con la aplicación.
 Usa tipografías del sistema y funciona sin conexión después de cargar sus
