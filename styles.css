@@ -479,6 +479,20 @@ h1 span,
 .status-detail { color: #b7a89e; font-size: 9px; }
 .status-panel-bottom { padding-top: 11px; border-top: 1px solid rgb(255 255 255 / 12%); font-size: 7px; letter-spacing: .12em; }
 
+.contact-section { padding-block: 66px; border-bottom: 1px solid var(--line); background: var(--white); }
+.contact-inner { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 70px; }
+.contact-copy .eyebrow { margin-bottom: 14px; }
+.contact-copy h2 { margin-bottom: 12px; font-family: "Manrope", "Segoe UI", sans-serif; font-size: clamp(28px, 3.5vw, 38px); font-weight: 600; letter-spacing: -.05em; line-height: 1.2; }
+.contact-copy > p:last-child { max-width: 420px; margin-bottom: 0; color: var(--muted); font-size: 13px; }
+.contact-links { display: grid; gap: 12px; }
+.contact-link { display: flex; min-height: 70px; align-items: center; gap: 15px; padding: 13px 16px; border: 1px solid var(--line); border-radius: 4px; color: var(--ink); text-decoration: none; transition: border-color .2s ease, transform .2s ease; }
+.contact-link:hover { transform: translateY(-2px); border-color: var(--amber); }
+.contact-link > svg { width: 21px; height: 21px; flex: 0 0 auto; fill: none; stroke: var(--amber-dark); stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.5; }
+.contact-link > span:nth-child(2) { display: grid; gap: 2px; }
+.contact-link strong { font-size: 12px; }
+.contact-link > span:nth-child(2) > span { color: var(--muted); font-size: 11px; }
+.contact-arrow { margin-left: auto; color: var(--amber-dark); font-size: 17px; }
+
 .site-footer { background: #fbf9f6; }
 .footer-main { min-height: 90px; justify-content: space-between; border-bottom: 1px solid var(--line); }
 .footer-brand .brand-mark { width: 30px; height: 30px; }
@@ -542,6 +556,9 @@ h1 span,
   .status-section { padding-block: 57px; }
   .status-inner { grid-template-columns: 1fr; gap: 29px; }
   .status-copy > p:last-child { font-size: 12px; }
+  .contact-section { padding-block: 52px; }
+  .contact-inner { grid-template-columns: 1fr; gap: 25px; }
+  .contact-copy h2 { font-size: 31px; }
   .footer-main { min-height: 85px; gap: 14px; }
   .footer-main > p { display: none; }
   .footer-legal { align-items: flex-start; flex-direction: column; justify-content: center; gap: 4px; padding-block: 13px; line-height: 1.6; }

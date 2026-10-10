@@ -16,12 +16,17 @@ carpeta, incluido `images/gemaris-isotipo.png`. No publiques el repositorio
 privado completo ni agregues configuración, datos, capturas operacionales o
 código de la aplicación.
 
-Para servir el sitio, habilita **Settings → Pages**, selecciona **Deploy from a
-branch**, la rama `main` y la carpeta raíz (`/(root)`). Hasta completar ese
-paso, los archivos son públicos en el repositorio, pero GitHub Pages puede no
-estar activo. Después, verifica la URL asignada y que cargue el isotipo. El
-contenido actual indica que el proyecto está en desarrollo y no anuncia
-disponibilidad comercial.
+GitHub Pages está configurado para publicar desde la rama `main` y la carpeta
+raíz (`/(root)`). El sitio está disponible en
+https://reinierssp.github.io/WEB_GEMARIS/. Después de enviar cambios a `main`,
+GitHub Pages los publica automáticamente; la actualización puede tardar unos
+minutos. El contenido actual indica que el proyecto está en desarrollo y no
+anuncia disponibilidad comercial.
+
+La página ofrece contacto por correo y WhatsApp Business. El número de
+WhatsApp está incluido en el enlace de chat para que el botón abra la
+conversación, aunque no se muestra como texto en la página. Cuando se defina un
+canal oficial de Telegram, se podrá agregar junto a esos contactos.
 
 El sitio no requiere bibliotecas externas ni tiene conexión con la aplicación.
 Usa tipografías del sistema y funciona sin conexión después de cargar sus
