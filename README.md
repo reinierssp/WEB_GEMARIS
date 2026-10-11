@@ -31,3 +31,57 @@ canal oficial de Telegram, se podrá agregar junto a esos contactos.
 El sitio no requiere bibliotecas externas ni tiene conexión con la aplicación.
 Usa tipografías del sistema y funciona sin conexión después de cargar sus
 archivos locales.
+
+## Contenido público y documentación de GEMARIS
+
+El sitio usa estos archivos locales:
+
+- `site-content.js`: única fuente de contenido aprobado para difusión. Contiene
+  la descripción pública, la estructura objetivo, los estados resumidos de las
+  áreas y las novedades seleccionadas.
+- `site.js`: renderiza esas fichas en el sitio con JavaScript nativo y crea el
+  contenido mediante nodos de texto.
+- `index.html` y `styles.css`: estructura semántica y presentación responsive.
+
+La estructura reúne las fichas públicas de las áreas, sus tableros y el estado
+conocido de desarrollo. La propuesta es adaptable y no representa el
+organigrama vigente de una organización concreta. Dirección General aparece
+como autoridad central de la que dependen los módulos, sin constituir un
+módulo aparte. Auditoría y Control Interno (Regulación y Control) atraviesan
+los módulos; esto no implica acceso irrestricto a datos y mantiene la
+independencia de Auditoría.
+
+La sección **La plataforma** explica el modelo funcional módulo → tablero →
+servicio y las funciones transversales. Sus tarjetas son una descripción de la
+visión, no enlaces ni afirmaciones de que esas capacidades estén disponibles.
+El inicio y la ilustración también presentan una propuesta conceptual; el
+estado actual por área se consulta en el mapa de estructura.
+
+Los estados distinguen **En desarrollo**, **En pausa** y **Conceptual · sin
+iniciar**. Describen el avance de GEMARIS, no la disponibilidad operativa de un
+departamento. La ilustración del encabezado es conceptual: no es una captura
+ni una promesa de interfaz disponible.
+
+Al actualizar la información:
+
+1. Contrasta el dato con la biblioteca interna de GEMARIS y el estado vigente
+   del proyecto.
+2. Prepara en `site-content.js` solo un resumen público aprobado; no conectes
+   este repositorio al repositorio privado, a sus documentos ni a su
+   changelog.
+3. Mantén los estados por módulo y tablero: **En desarrollo** para trabajo
+   activo, **En pausa** para desarrollo comenzado y detenido, y **Conceptual ·
+   sin iniciar** cuando solo existe la propuesta. No estimes porcentajes sin un
+   alcance medible.
+4. Añade las novedades aprobadas a `updates` en `site-content.js`, actualiza
+   `lastUpdated` al revisar el contenido y cambia la versión mostrada solo
+   cuando corresponda a una decisión confirmada.
+5. Abre `index.html` directamente o sírvelo localmente; no se requieren
+   dependencias ni conexión de red para cargar el contenido.
+6. Comprueba las fichas, enlaces, accesibilidad por teclado, presentación
+   responsive y claridad de los estados.
+
+La actualización de la documentación privada **no cambia la página por sí
+sola**. Esta separación es intencional: cada cambio público requiere revisión
+editorial. Al enviar cambios aprobados a `main`, GitHub Pages reconstruye y
+publica el sitio automáticamente.
