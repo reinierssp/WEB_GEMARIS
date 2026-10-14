@@ -75,11 +75,16 @@ Al actualizar la información:
    alcance medible.
 4. Añade las novedades aprobadas a `updates` en `site-content.js`, actualiza
    `lastUpdated` al revisar el contenido y cambia la versión mostrada solo
-   cuando corresponda a una decisión confirmada.
+   cuando corresponda a una decisión confirmada. Distingue claramente entre
+   el cierre de una versión validada y el inicio de un ciclo en desarrollo;
+   no presentes como disponible una alpha que todavía no se ha compilado.
 5. Abre `index.html` directamente o sírvelo localmente; no se requieren
    dependencias ni conexión de red para cargar el contenido.
 6. Comprueba las fichas, enlaces, accesibilidad por teclado, presentación
-   responsive y claridad de los estados.
+   responsive y claridad de los estados. Contrasta también que las novedades,
+   el identificador de versión y el alcance anunciado coincidan con la
+   documentación vigente del proyecto, y que no revelen detalles internos
+   innecesarios.
 
 La actualización de la documentación privada **no cambia la página por sí
 sola**. Esta separación es intencional: cada cambio público requiere revisión

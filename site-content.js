@@ -3,11 +3,11 @@
  * No sincronizar automáticamente desde la biblioteca interna.
  */
 window.GEMARIS_PUBLIC_CONTENT = {
-  version: '0.1.0-alpha.1',
-  lastUpdated: 'Actualizado: 10 de octubre de 2026',
+  version: '0.1.0-alpha.2',
+  lastUpdated: 'Actualizado: 13 de octubre de 2026',
   structureNotice: 'Esta es una propuesta conceptual para la empresa objetivo; no reproduce su organigrama vigente. Todos los módulos dependen de la Dirección General, que visualiza y controla sus procesos a nivel de dirección. Los nombres y agrupaciones podrán ajustarse al validarla. Los estados describen el desarrollo de GEMARIS.',
   moduleDisclaimer: 'La estructura y los servicios descritos expresan una visión de trabajo, no capacidades necesariamente implementadas. Los estados reflejan el avance conocido y no garantizan disponibilidad para uso. Los permisos de cada servicio y la independencia de Auditoría se mantienen.',
-  updateGuidance: 'Las próximas notas se añadirán aquí cuando los cambios estén verificados y aprobados para su comunicación pública.',
+  updateGuidance: 'Estas notas resumen el estado del desarrollo; no anuncian una distribución ni sustituyen las notas de una versión validada.',
   direction: {
     name: 'Dirección General',
     kind: 'Nivel central de dirección · no es un módulo',
@@ -73,10 +73,11 @@ window.GEMARIS_PUBLIC_CONTENT = {
             name: 'Contabilidad y Finanzas',
             status: 'development',
             stateLabel: 'En desarrollo',
-            summary: 'La prioridad actual es el tablero de Ingresos.',
+            summary: 'Alpha 2 se enfoca en Contabilidad y, en particular, en avanzar la integración del plan contable y del conciliador en el flujo de Ingresos.',
             details: [
-              'Los parsers de captura y las asociaciones de centros de costo con códigos de medios de cobro están reportados como listos.',
-              'La conciliación completa, las plantillas de comprobantes, el archivo de intercambio, la verificación posterior y las pruebas integrales siguen en desarrollo o planificación.'
+              'Los parsers de captura y las asociaciones de centros de costo con códigos de medios de cobro constituyen la base funcional disponible.',
+              'La integración del plan contable y del conciliador continúa en desarrollo; su alcance debe documentarse y validarse antes de considerar disponible el flujo completo.',
+              'Planificación económica es un tablero distinto y no forma parte del alcance anunciado para este ciclo.'
             ]
           },
           {
@@ -185,6 +186,28 @@ window.GEMARIS_PUBLIC_CONTENT = {
     ]
   },
   updates: [
+    {
+      date: '2026-10-13',
+      dateLabel: '13 oct. 2026',
+      title: 'Comienza el ciclo de desarrollo alpha.2',
+      status: 'En desarrollo',
+      paragraphs: [
+        'Tras cerrar la validación local de Cimiento (0.1.0-alpha.1), la línea fuente avanza a 0.1.0-alpha.2. El nuevo ciclo prioriza el módulo de Contabilidad y continúa el trabajo de integración del plan contable y del conciliador en el flujo de Ingresos.',
+        'El alcance se irá documentando y validando durante el desarrollo. La conciliación completa y la integración contable no se presentan como funciones terminadas ni disponibles.'
+      ],
+      note: 'Alpha.2 aún no se ha compilado; este anuncio comunica el inicio del ciclo, no la disponibilidad de una nueva versión.'
+    },
+    {
+      date: '2026-10-13',
+      dateLabel: '13 oct. 2026',
+      title: 'Cimiento: cierre de alpha.1 y cambio de versión',
+      status: 'Hito del proyecto',
+      paragraphs: [
+        'La alpha.1, centrada en establecer el instalador de Windows y la administración externa, quedó validada localmente en el equipo de desarrollo. La revisión también dejó documentados el servicio, el acceso de red y el alcance de las comprobaciones realizadas.',
+        'Además, Cimiento consolidó la base de la aplicación, sus controles de acceso, HTTPS y la experiencia PWA. La línea de desarrollo se actualizó a 0.1.0-alpha.2; el registro técnico detallado permanece en la documentación del proyecto.'
+      ],
+      note: 'La validación fue local: no equivale a una distribución pública ni certifica acceso remoto o rendimiento en otros equipos.'
+    },
     {
       date: '2026-10-10',
       dateLabel: '10 oct. 2026',
