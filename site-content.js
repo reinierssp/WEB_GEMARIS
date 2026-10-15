@@ -4,7 +4,20 @@
  */
 window.GEMARIS_PUBLIC_CONTENT = {
   version: '0.1.0-alpha.2',
-  lastUpdated: 'Actualizado: 13 de octubre de 2026',
+  lastUpdated: 'Actualizado: 15 de octubre de 2026',
+  nameMeaning: {
+    expansion: 'Gestión Empresarial Modular para la Administración de Recursos, Información y Servicios',
+    description: 'Esta expansión es una propuesta para explicar el nombre y resumir la visión de una plataforma que conecta áreas y procesos de una organización. Las capacidades descritas no implican que todas estén implementadas.',
+    words: [
+      { letter: 'G', word: 'Gestión', description: 'Coordinar procesos desde la planificación hasta el control.', image: 'images/gemaris-piece-g.png', position: [85, 11, 130, 81], spread: [-6, -42] },
+      { letter: 'E', word: 'Empresarial', description: 'Conectar áreas y responsabilidades de la organización.', image: 'images/gemaris-piece-e.png', position: [30, 53, 89, 95], spread: [-55, -22] },
+      { letter: 'M', word: 'Modular', description: 'Crecer por módulos, de forma progresiva.', image: 'images/gemaris-piece-m.png', position: [180, 53, 90, 95], spread: [55, -22] },
+      { letter: 'A', word: 'Administración', description: 'Apoyar la coordinación y el seguimiento.', image: 'images/gemaris-piece-a.png', position: [98, 199, 104, 78], spread: [0, 62] },
+      { letter: 'R', word: 'Recursos', description: 'Considerar los recursos de cada área y proceso.', image: 'images/gemaris-piece-r.png', position: [191, 134, 79, 109], spread: [58, 12] },
+      { letter: 'I', word: 'Información', description: 'Registrar y consultar información responsablemente.', image: 'images/gemaris-piece-i.png', position: [30, 134, 79, 109], spread: [-58, 12] },
+      { letter: 'S', word: 'Servicios', description: 'Transformar necesidades en funciones concretas.', image: 'images/gemaris-piece-s.png', position: [90, 88, 120, 124], spread: [0, 0] }
+    ]
+  },
   structureNotice: 'Esta es una propuesta conceptual para la empresa objetivo; no reproduce su organigrama vigente. Todos los módulos dependen de la Dirección General, que visualiza y controla sus procesos a nivel de dirección. Los nombres y agrupaciones podrán ajustarse al validarla. Los estados describen el desarrollo de GEMARIS.',
   moduleDisclaimer: 'La estructura y los servicios descritos expresan una visión de trabajo, no capacidades necesariamente implementadas. Los estados reflejan el avance conocido y no garantizan disponibilidad para uso. Los permisos de cada servicio y la independencia de Auditoría se mantienen.',
   updateGuidance: 'Estas notas resumen el estado del desarrollo; no anuncian una distribución ni sustituyen las notas de una versión validada.',

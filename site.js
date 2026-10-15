@@ -131,6 +131,171 @@
     if (disclaimer) disclaimer.textContent = content.moduleDisclaimer || '';
   }
 
+  function renderNameMeaning() {
+    const breakdown = document.querySelector('[data-public-name-breakdown]');
+    const description = document.querySelector('[data-public-name-description]');
+    const assembly = document.querySelector('[data-name-assembly]');
+    const wordTrack = document.querySelector('[data-name-word]');
+    const stage = document.querySelector('[data-name-animation]');
+    const toggle = document.querySelector('[data-name-animation-toggle]');
+    const announcement = document.querySelector('[data-name-announcement]');
+    if (!content.nameMeaning || !breakdown || !description || !assembly || !wordTrack || !stage || !toggle) return;
+
+    function createPieceImage(item, className) {
+      const image = element('img', className);
+      image.src = item.image;
+      image.alt = '';
+      image.setAttribute('aria-hidden', 'true');
+      return image;
+    }
+
+    content.nameMeaning.words.forEach((item) => {
+      const letter = element('span', 'animation-letter', item.letter);
+      letter.dataset.letter = item.letter;
+      wordTrack.append(letter);
+
+      const card = element('li', `exploded-piece exploded-piece--${item.letter.toLowerCase()}`);
+      card.setAttribute('aria-label', `${item.letter}: ${item.word}. ${item.description}`);
+      card.setAttribute('aria-hidden', 'true');
+
+      const preview = element('span', 'piece-preview');
+      preview.append(createPieceImage(item, 'piece-preview-art'));
+      preview.append(element('span', 'piece-mark', item.letter));
+
+      const copy = element('span', 'piece-copy');
+      copy.append(
+        element('strong', '', `${item.letter} · ${item.word}`),
+        element('span', '', item.description)
+      );
+      card.append(preview, copy);
+      breakdown.append(card);
+
+      const fragment = createPieceImage(
+        item,
+        `assembly-fragment assembly-fragment--${item.letter.toLowerCase()}`
+      );
+      const fragmentIndex = assembly.children.length;
+      const [x, y, width, height] = item.position;
+      fragment.style.left = `${x / 3}%`;
+      fragment.style.top = `${y / 3}%`;
+      fragment.style.width = `${width / 3}%`;
+      fragment.style.height = `${height / 3}%`;
+      fragment.style.setProperty('--spread-x', `${item.spread[0]}px`);
+      fragment.style.setProperty('--spread-y', `${item.spread[1]}px`);
+      fragment.style.setProperty('--spread-rotation', `${(fragmentIndex % 2 ? 1 : -1) * (8 + fragmentIndex * 2)}deg`);
+      fragment.style.setProperty('--break-delay', `${fragmentIndex * 60}ms`);
+      fragment.style.setProperty('--assembly-delay', `${(content.nameMeaning.words.length - fragmentIndex - 1) * 60}ms`);
+      assembly.append(fragment);
+    });
+
+    description.textContent = content.nameMeaning.description;
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      stage.classList.add('is-static');
+      stage.classList.remove('is-logo');
+      for (const card of breakdown.children) card.removeAttribute('aria-hidden');
+      toggle.hidden = true;
+      return;
+    }
+
+    let timer = null;
+    let timerStarted = 0;
+    let remaining = 0;
+    let resolveDelay = null;
+    let paused = false;
+
+    function startDelay() {
+      timerStarted = performance.now();
+      timer = window.setTimeout(() => {
+        timer = null;
+        remaining = 0;
+        const resolve = resolveDelay;
+        resolveDelay = null;
+        if (resolve) resolve();
+      }, remaining);
+    }
+
+    function wait(milliseconds) {
+      remaining = milliseconds;
+      return new Promise((resolve) => {
+        resolveDelay = resolve;
+        if (!paused) startDelay();
+      });
+    }
+
+    async function playCycle() {
+      const cards = [...breakdown.children];
+      const letters = [...wordTrack.children];
+      while (true) {
+        stage.className = 'name-animation is-logo';
+        for (const card of cards) {
+          card.classList.remove('is-active');
+          card.classList.remove('is-settling');
+          card.setAttribute('aria-hidden', 'true');
+        }
+        for (const letter of letters) letter.classList.remove('is-visible');
+        if (announcement) announcement.textContent = 'El isotipo de GEMARIS.';
+        await wait(1700);
+
+        if (announcement) announcement.textContent = 'El isotipo se separa en sus siete piezas.';
+        stage.className = 'name-animation is-breaking';
+        await wait(1450);
+
+        stage.className = 'name-animation is-revealing';
+        for (const card of cards) {
+          card.setAttribute('aria-hidden', 'false');
+          card.classList.add('is-active');
+          if (announcement) announcement.textContent = card.getAttribute('aria-label');
+          await wait(1450);
+          card.classList.add('is-settling');
+          await wait(520);
+          card.classList.remove('is-active');
+          card.classList.remove('is-settling');
+          card.setAttribute('aria-hidden', 'true');
+          letters[cards.indexOf(card)].classList.add('is-visible');
+          stage.classList.add('is-forming-word');
+        }
+
+        await wait(1100);
+        if (announcement) announcement.textContent = 'Las piezas se unen para reconstruir el isotipo, mientras GEMARIS permanece visible.';
+        stage.className = 'name-animation is-assembling';
+        await wait(1450);
+        stage.classList.add('is-assembled', 'is-flashing');
+        await wait(550);
+        stage.classList.remove('is-flashing');
+        await wait(500);
+        stage.classList.add('is-word-fading');
+        await wait(550);
+
+        stage.className = 'name-animation is-logo is-word-fading';
+        for (const card of cards) {
+          card.classList.remove('is-active', 'is-settling');
+          card.setAttribute('aria-hidden', 'true');
+        }
+        for (const letter of letters) letter.classList.remove('is-visible');
+        await wait(350);
+        stage.classList.remove('is-word-fading');
+        if (announcement) announcement.textContent = 'El isotipo de GEMARIS.';
+      }
+    }
+
+    toggle.addEventListener('click', () => {
+      paused = !paused;
+      stage.classList.toggle('is-paused', paused);
+      toggle.setAttribute('aria-pressed', String(paused));
+      toggle.textContent = paused ? 'Reanudar animación' : 'Pausar animación';
+      if (paused && timer !== null) {
+        window.clearTimeout(timer);
+        remaining = Math.max(0, remaining - (performance.now() - timerStarted));
+        timer = null;
+      } else if (!paused && resolveDelay && timer === null) {
+        startDelay();
+      }
+    });
+
+    playCycle();
+  }
+
   function renderUpdate(item) {
     const article = element('article', 'update-entry');
     const dateGroup = element('div', 'update-date');
@@ -171,5 +336,6 @@
 
   renderOrganization();
   renderProjectInfo();
+  renderNameMeaning();
   renderUpdates();
 })();

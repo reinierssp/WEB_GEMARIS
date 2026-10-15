@@ -37,8 +37,8 @@ archivos locales.
 El sitio usa estos archivos locales:
 
 - `site-content.js`: única fuente de contenido aprobado para difusión. Contiene
-  la descripción pública, la estructura objetivo, los estados resumidos de las
-  áreas y las novedades seleccionadas.
+  el significado público del nombre GEMARIS, la estructura objetivo, los
+  estados resumidos de las áreas y las novedades seleccionadas.
 - `site.js`: renderiza esas fichas en el sitio con JavaScript nativo y crea el
   contenido mediante nodos de texto.
 - `index.html` y `styles.css`: estructura semántica y presentación responsive.
@@ -51,9 +51,16 @@ módulo aparte. Auditoría y Control Interno (Regulación y Control) atraviesan
 los módulos; esto no implica acceso irrestricto a datos y mantiene la
 independencia de Auditoría.
 
-La sección **La plataforma** explica el modelo funcional módulo → tablero →
-servicio y las funciones transversales. Sus tarjetas son una descripción de la
-visión, no enlaces ni afirmaciones de que esas capacidades estén disponibles.
+La sección **La plataforma** inicia con el isotipo, que se separa en siete
+piezas. Después presenta cada una con su explicación, forma el nombre GEMARIS
+con las letras mientras las piezas se reconstruyen y termina con un destello.
+Cada pieza se muestra con su recorte
+transparente independiente (`images/gemaris-piece-*.png`), extraído del
+isotipo original para evitar que aparezcan fragmentos de piezas vecinas. La
+pieza central S representa Servicios. La propuesta de expansión
+del nombre resume el propósito de la plataforma; no es una afirmación de que
+todas las capacidades descritas estén disponibles. La misma sección explica
+el modelo funcional módulo → tablero → servicio y las funciones transversales.
 El inicio y la ilustración también presentan una propuesta conceptual; el
 estado actual por área se consulta en el mapa de estructura.
 
