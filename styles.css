@@ -633,6 +633,21 @@ h1 span,
 .product-status { margin-left: auto; color: var(--muted); font-size: 11px; text-align: right; }
 .product-disclaimer { max-width: 780px; margin: 17px 0 0; color: var(--muted); font-size: 10px; line-height: 1.8; }
 
+.gallery-section { padding: 94px 0 100px; background: #f2eee8; }
+.gallery-section .section-heading { margin-bottom: 24px; }
+.gallery-notice { display: flex; align-items: center; gap: 10px; margin: 0 0 26px; color: var(--muted); font-size: 11px; }
+.gallery-notice span { color: var(--amber-dark); }
+.gallery-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.gallery-card { min-width: 0; overflow: hidden; border: 1px solid #e4dcd2; border-radius: 5px; background: var(--white); }
+.gallery-preview { display: grid; aspect-ratio: 16 / 10; place-items: center; overflow: hidden; background: linear-gradient(145deg, #f9f6f1, #eee8df); }
+.gallery-screenshot { display: block; width: 100%; height: 100%; object-fit: contain; }
+.gallery-card-copy { padding: 16px 18px 19px; }
+.gallery-card-heading { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
+.gallery-index { color: var(--amber-dark); font-size: 9px; font-weight: 800; letter-spacing: .1em; }
+.gallery-state { padding: 4px 7px; border-radius: 10px; background: #f4f0ea; color: #74675d; font-size: 7px; font-weight: 700; }
+.gallery-card-copy h3 { margin: 0 0 6px; font-family: "Manrope", "Segoe UI", sans-serif; font-size: 15px; letter-spacing: -.025em; }
+.gallery-card-copy p { max-width: 480px; margin: 0; color: var(--muted); font-size: 10px; line-height: 1.8; }
+
 .updates-section { padding: 91px 0 96px; background: #f2eee8; }
 .updates-heading { margin-bottom: 30px; }
 .update-entry { display: grid; grid-template-columns: 180px 1fr; gap: 30px; padding: 25px 27px; border: 1px solid #e2d9cf; border-radius: 4px; background: var(--white); }
@@ -730,18 +745,14 @@ h1 span,
   .is-static .piece-preview-art { width: 80px; height: 80px; }
   .is-static .piece-copy { font-size: 9px; }
   .feature-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 13px; }
   .product-info-section .section-heading,
   .updates-heading { grid-template-columns: 1fr; }
   .approach-section { gap: 50px; }
   .status-inner { gap: 45px; }
 }
 
-@media (max-width: 680px) {
-  .shell { width: min(100% - 38px, var(--shell)); }
-  .site-header { height: 65px; }
-  .brand-mark { width: 31px; height: 31px; }
-  .brand-name { font-size: 15px; }
-  .navigation { position: relative; }
+@media (max-width: 800px) {
   .nav-links { gap: 0; }
   .nav-links > a:not(.nav-status) { display: none; }
   .nav-links .nav-status { font-size: 10px; }
@@ -753,6 +764,15 @@ h1 span,
   .mobile-navigation-panel { position: absolute; z-index: 8; top: calc(100% + 13px); right: -2px; display: grid; min-width: 205px; padding: 7px; border: 1px solid var(--line); border-radius: 4px; background: var(--white); box-shadow: 0 12px 30px rgb(57 39 26 / 12%); }
   .mobile-navigation-panel a { padding: 10px; border-radius: 3px; color: var(--ink-soft); font-size: 12px; text-decoration: none; }
   .mobile-navigation-panel a:hover { background: var(--paper); color: var(--amber-dark); }
+  .gallery-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 680px) {
+  .shell { width: min(100% - 38px, var(--shell)); }
+  .site-header { height: 65px; }
+  .brand-mark { width: 31px; height: 31px; }
+  .brand-name { font-size: 15px; }
+  .navigation { position: relative; }
   .hero { min-height: auto; grid-template-columns: 1fr; gap: 32px; padding-block: 62px 54px; }
   .hero-copy { max-width: 560px; }
   .eyebrow { font-size: 8px; letter-spacing: .13em; }
@@ -803,7 +823,11 @@ h1 span,
   .feature-footnote { font-size: 8px; line-height: 1.7; }
   .organization-section,
   .product-info-section,
+  .gallery-section,
   .updates-section { padding-block: 66px; }
+  .gallery-grid { grid-template-columns: 1fr; gap: 13px; }
+  .gallery-preview { aspect-ratio: 16 / 10; }
+  .gallery-notice { align-items: flex-start; font-size: 10px; }
   .organization-notice { padding: 14px; }
   .organization-notice p { font-size: 11px; }
   .organization-state-key { gap: 6px; margin-bottom: 19px; }

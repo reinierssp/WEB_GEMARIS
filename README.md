@@ -43,6 +43,12 @@ El sitio usa estos archivos locales:
   contenido mediante nodos de texto.
 - `index.html` y `styles.css`: estructura semántica y presentación responsive.
 
+La sección **Galería** muestra capturas reales de Gema, el Centro de
+Conocimiento y Contabilidad tomadas del entorno de desarrollo. Antes de
+publicarlas se revisaron para excluir historiales y datos operativos. Son una
+referencia visual del estado actual, no una promesa de disponibilidad
+comercial ni de que todas las funciones estén terminadas.
+
 La estructura reúne las fichas públicas de las áreas, sus tableros y el estado
 conocido de desarrollo. La propuesta es adaptable y no representa el
 organigrama vigente de una organización concreta. Dirección General aparece
