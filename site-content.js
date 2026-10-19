@@ -4,7 +4,7 @@
  */
 window.GEMARIS_PUBLIC_CONTENT = {
   version: '0.1.0-alpha.2',
-  lastUpdated: 'Actualizado: 15 de octubre de 2026',
+  lastUpdated: 'Actualizado: 19 de octubre de 2026',
   nameMeaning: {
     expansion: 'Gestión Empresarial Modular para la Administración de Recursos, Información y Servicios',
     description: 'Esta expansión es una propuesta para explicar el nombre y resumir la visión de una plataforma que conecta áreas y procesos de una organización. Las capacidades descritas no implican que todas estén implementadas.',
@@ -80,24 +80,24 @@ window.GEMARIS_PUBLIC_CONTENT = {
         kind: 'Módulo organizativo objetivo',
         status: 'development',
         stateLabel: 'En desarrollo',
-        summary: 'La actividad de software actual se concentra en Contabilidad, en particular en Ingresos. El alcance de toda la Subdirección aún no está inventariado.',
+        summary: 'El trabajo de software se concentra en Contabilidad y en las primeras capacidades de Planificación. El alcance de toda la Subdirección aún no está inventariado.',
         boards: [
           {
             name: 'Contabilidad y Finanzas',
             status: 'development',
             stateLabel: 'En desarrollo',
-            summary: 'Alpha 2 se enfoca en Contabilidad y, en particular, en avanzar la integración del plan contable y del conciliador en el flujo de Ingresos.',
+            summary: 'El tablero incorpora una primera consulta preliminar de movimientos por cuentas, mientras continúa el trabajo de integración contable y del conciliador.',
             details: [
               'Los parsers de captura y las asociaciones de centros de costo con códigos de medios de cobro constituyen la base funcional disponible.',
-              'La integración del plan contable y del conciliador continúa en desarrollo; su alcance debe documentarse y validarse antes de considerar disponible el flujo completo.',
-              'Planificación económica es un tablero distinto y no forma parte del alcance anunciado para este ciclo.'
+              'El informe contable por cuentas aún no representa un REAL conciliado; la importación del PLAN y su comparación con el REAL siguen pendientes.',
+              'Planificación económica es un tablero distinto y cuenta con una estructura inicial; la carga de importes continúa pendiente.'
             ]
           },
           {
             name: 'Planificación',
-            status: 'conceptual',
-            stateLabel: 'Conceptual · sin iniciar',
-            summary: 'Se prevé analizarla en paralelo después de corregir errores de Ingresos; no se presenta como desarrollo iniciado.'
+            status: 'development',
+            stateLabel: 'En desarrollo',
+            summary: 'Dispone de una estructura jerárquica inicial de cuentas locales enlazadas con cuentas activas de ZunAcc. No muestra saldos ni importes de un plan; la importación y el resto de las funciones siguen pendientes.'
           },
           {
             name: 'Costos',
@@ -199,6 +199,39 @@ window.GEMARIS_PUBLIC_CONTENT = {
     ]
   },
   updates: [
+    {
+      date: '2026-10-19',
+      dateLabel: '19 oct. 2026',
+      title: 'Gema: inteligencia artificial local para acompañar GEMARIS',
+      status: 'Nueva incorporación · visión en desarrollo',
+      paragraphs: [
+        'Gema es la inteligencia artificial local integrada en GEMARIS: una asistente concebida para acompañar, de forma gradual, los distintos procesos del sistema. Su propósito es ayudar a las personas a encontrar orientación, comprender la documentación y agilizar tareas cotidianas sin perder de vista la información y los permisos que corresponden a cada usuario.',
+        'La visión de Gema también incluye apoyar la preparación y generación de informes: GEMARIS conserva el control de los datos, los cálculos y los accesos, mientras la IA ayuda a organizar y explicar los resultados. Así, Gema aspira a combinar agilidad y eficiencia con el rigor que requiere la gestión.'
+      ],
+      note: 'Gema ya cuenta con un chat local y capacidades iniciales de consulta documental y financiera. Su asistencia transversal y el apoyo a la generación de informes forman parte de una visión en desarrollo; no todas estas funciones están disponibles todavía.'
+    },
+    {
+      date: '2026-10-19',
+      dateLabel: '19 oct. 2026',
+      title: 'Centro de Conocimiento: la ayuda conectada con cada proceso',
+      status: 'Nueva propuesta integrada',
+      paragraphs: [
+        'El nuevo Centro organiza documentos por áreas y categorías para que las personas puedan buscarlos y consultarlos en un solo lugar. Los documentos publicados pueden vincularse con los módulos y servicios donde se utilizan; Gema, además, puede apoyarse en el contenido vigente que cada persona está autorizada a consultar.',
+        'Su catálogo navegable y las primeras herramientas de revisión colaborativa sientan las bases para mantener procedimientos y guías más cerca del trabajo de cada equipo.'
+      ],
+      note: 'El Centro continúa en desarrollo; la guía general de usuario disponible está identificada como borrador pendiente de revisión.'
+    },
+    {
+      date: '2026-10-19',
+      dateLabel: '19 oct. 2026',
+      title: 'Contabilidad avanza: cuentas conectadas, planificación e informes',
+      status: 'Desarrollo en curso',
+      paragraphs: [
+        'El módulo avanza en sus nomencladores contables y en la relación entre las cuentas locales y ZunAcc. Esa base se extiende a una primera estructura de Planificación económica y a un informe preliminar que permite explorar movimientos por fechas, cuentas y centros de costo.',
+        'Estas piezas se integran en los tableros de Contabilidad y conservan sus permisos: consultar la estructura ayuda a preparar el trabajo, mientras que el informe permite revisar información contable con mayor contexto.'
+      ],
+      note: 'El informe es preliminar y aún no está conciliado; la carga de importes del plan y la comparación REAL vs. PLAN siguen pendientes.'
+    },
     {
       date: '2026-10-13',
       dateLabel: '13 oct. 2026',
